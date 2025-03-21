@@ -78,9 +78,9 @@ export default function Navbar() {
             </motion.div>
           </button>
         </div>
-        <nav className="hidden md:flex space-x-6 text-lg">
+        <nav className="hidden md:flex space-x-6 text-[22.5px] font-[300]">
           {navLinks.map((link) => (
-            <div key={link.name} className="relative">
+            <div key={link.name} className="">
               {link.isDropdown ? (
                 <>
                   <button
@@ -91,9 +91,9 @@ export default function Navbar() {
                     <ChevronDown className={`transition-transform ${submenuOpen === link.name ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   {submenuOpen === link.name && (
-                    <div className="absolute left-0 mt-2 w-56 bg-white shadow-md rounded-md border border-gray-200 z-30">
+                    <div className="absolute left-0 mt-15 bg-white shadow-md  border-t-1  border-black z-30 w-[100%] font-[700] leading-12">
                       {link.subLinks.map((sub) => (
-                        <a key={sub.name} href={sub.href} className="block px-4 py-2 hover:bg-gray-100">
+                        <a key={sub.name} href={sub.href} className="block px-4 py-2 hover:underline border-b-1 border-[#bbc6c3]">
                           {sub.name}
                         </a>
                       ))}
@@ -101,7 +101,7 @@ export default function Navbar() {
                   )}
                 </>
               ) : (
-                <a href={link.href} className="hover:text-[#034996] hover:underline">
+                <a href={link.href} className="hover:black hover:underline w-[100%]">
                   {link.name}
                 </a>
               )}
